@@ -2,6 +2,7 @@ var express = require('express');
 const volleyball = require('volleyball')
 var nunjucks = require('nunjucks')
 var routes = require('./routes/');
+var bodyParser = require('body-parser');
 
 nunjucks.configure('views'); // point nunjucks to the proper directory for templates
 
@@ -9,6 +10,12 @@ var app = express();
 
 app.set('view engine', 'html'); // have res.render work with html files
 app.engine('html', nunjucks.render); // when giving html files to res.render, tell it to use nunjucks
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 app.use(volleyball)
 app.use('/', routes);
