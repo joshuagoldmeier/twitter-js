@@ -8,13 +8,12 @@ router.get('/', function (req, res) {
   res.render( 'index', { tweets: tweets } );
 });
 
-router.get('/stylesheets/style.css', function (req, res) {
+// router.get('/stylesheets/style.css', function (req, res) {
   
-  res.sendFile('/stylesheets/style.css')
-  //res.sendFile(path.join(__dirname, './public/stylesheets/style.css'));
+//   //res.sendFile('/static/stylesheets/style.css')
+//   //res.sendFile(path.join(__dirname, '/public/stylesheets/style.css'));
   
-});
-
+// });
 
 
 module.exports = router;
