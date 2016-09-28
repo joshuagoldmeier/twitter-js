@@ -10,7 +10,7 @@ router.get('/', function (req, res) {
 
 router.get('/stylesheets/style.css', function (req, res) {
   
-  res.sendFile('twitter-js/public/stylesheets/style.css')
+  res.sendFile('/stylesheets/style.css')
   //res.sendFile(path.join(__dirname, './public/stylesheets/style.css'));
   
 });
